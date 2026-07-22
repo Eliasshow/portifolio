@@ -56,37 +56,32 @@ function App() {
       </header>
 
       <section className="hero">
-        <motion.div
+        <motion.div 
           className="hero-content"
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
         >
+          {/* Nova Badge focada em Solução */}
           <motion.div variants={fadeUp} className="badge-animated">
             <span className="dot-pulse"></span>
-            Arquitetura SaaS & PWA
+            Soluções Digitais sob Medida
           </motion.div>
-
+          
+          {/* Novo Título focado na dor do cliente */}
           <motion.h1 variants={fadeUp} className="hero-title">
-            O futuro do seu negócio <br />
-            <span className="text-gradient shimmer-text">
-              começa no código.
-            </span>
+            Transforme suas ideias e <br />
+            <span className="text-gradient shimmer-text">planilhas em Aplicativos.</span>
           </motion.h1>
-
+          
+          {/* Novo Subtítulo conversando com o pequeno/médio empreendedor */}
           <motion.p variants={fadeUp} className="hero-subtitle">
-            Desenvolvimento de alta performance focado em conversão.
-            Transformamos operações complexas em interfaces imersivas e
-            escaláveis.
+            Do catálogo online para a sua nova loja até um painel de gestão completo. 
+            Crio sistemas modernos, rápidos e fáceis de usar para o seu negócio decolar.
           </motion.p>
-
+          
           <motion.div variants={fadeUp} className="hero-buttons">
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary glow-effect"
-            >
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn-primary glow-effect">
               Iniciar Projeto <Rocket size={18} />
             </a>
             <a href="#projetos" className="btn-secondary">
@@ -95,7 +90,6 @@ function App() {
           </motion.div>
         </motion.div>
       </section>
-
       <section id="projetos" className="projects-section">
         <motion.h2
           className="section-title"
