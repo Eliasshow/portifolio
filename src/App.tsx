@@ -90,6 +90,7 @@ function App() {
           </motion.div>
         </motion.div>
       </section>
+      
       <section id="projetos" className="projects-section">
         <motion.h2
           className="section-title"
@@ -146,7 +147,7 @@ function App() {
           viewport={{ once: true, margin: '-50px' }}
           variants={staggerContainer}
         >
-          {/* Card 1 */}
+          {/* Card 1 - DOCE ENCANTO COM LINK */}
           <motion.div
             variants={fadeUp}
             className="project-card"
@@ -167,6 +168,17 @@ function App() {
                 Catálogo digital imersivo para confeitarias. UX focada no
                 fechamento rápido de pedidos.
               </p>
+              
+              {/* O NOVO BOTÃO ENTRA AQUI */}
+              <a 
+                href="https://doceria-red.vercel.app/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-demo"
+              >
+                Ver Demo Interativa <ArrowRight size={16} />
+              </a>
+              
             </div>
           </motion.div>
 
@@ -220,7 +232,7 @@ function App() {
         </motion.div>
       </section>
 
-      {/* NEW: Seção de Vantagens com Ícones */}
+      {/* Seção de Vantagens com Ícones */}
       <section id="vantagens" className="features-section">
         <motion.div
           className="features-grid"
