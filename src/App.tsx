@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import {
   Rocket,
@@ -20,16 +19,23 @@ function App() {
     whatsappMessage
   )}`;
 
-  // Variáveis de animação para o Framer Motion
-  const fadeUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] },
-    },
-  };
+// Variáveis de animação para o Framer Motion corrigidas para o TypeScript
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" }, 
+  },
+};
 
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2 },
+  },
+};
   const staggerContainer = {
     hidden: { opacity: 0 },
     visible: {
