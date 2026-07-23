@@ -1,10 +1,7 @@
-import React from 'react';
 import { motion } from 'framer-motion';
+import React from 'react';
 import {
   Rocket,
-  Store,
-  ShoppingBag,
-  Scissors,
   Zap,
   MonitorSmartphone,
   ShieldCheck,
@@ -20,7 +17,7 @@ function App() {
     whatsappMessage
   )}`;
 
-  // O tipo 'any' desliga a verificação chata do TypeScript e resolve os 13 erros da Vercel
+  // Tipagem 'any' para a Vercel não travar o Deploy
   const fadeUp: any = {
     hidden: { opacity: 0, y: 40 },
     visible: {
@@ -39,13 +36,21 @@ function App() {
   };
 
   return (
-    /* O React.Fragment salva a vida: faz o StackBlitz rodar e a Vercel parar de reclamar */
     <React.Fragment>
       <div className="app-container">
-        {/* Background Dinâmico Minimalista */}
+        
+        {/* ================= BACKGROUND HIGH-TECH ================= */}
+        {/* Tempestade Cibernética */}
+        <div className="storm-flash"></div>
+        <div className="lightning-strike strike-1"></div>
+        <div className="lightning-strike strike-2"></div>
+        <div className="lightning-strike strike-3"></div>
+
+        {/* Fundo Dinâmico e Orbes de Luz */}
         <div className="noise-bg"></div>
         <div className="glow-orb main-orb"></div>
         <div className="glow-orb secondary-orb"></div>
+        {/* ======================================================== */}
 
         <header className="navbar">
           <div className="logo">
@@ -64,19 +69,16 @@ function App() {
             animate="visible"
             variants={staggerContainer}
           >
-            {/* Badge focada em Solução */}
             <motion.div variants={fadeUp} className="badge-animated">
               <span className="dot-pulse"></span>
               Soluções Digitais sob Medida
             </motion.div>
             
-            {/* Título focado na dor do cliente */}
             <motion.h1 variants={fadeUp} className="hero-title">
               Transforme suas ideias e <br />
               <span className="text-gradient shimmer-text">planilhas em Aplicativos.</span>
             </motion.h1>
             
-            {/* Subtítulo conversando com o empreendedor */}
             <motion.p variants={fadeUp} className="hero-subtitle">
               Do catálogo online para a sua nova loja até um painel de gestão completo. 
               Crio sistemas modernos, rápidos e fáceis de usar para o seu negócio decolar.
@@ -104,7 +106,7 @@ function App() {
             Sistemas em Destaque
           </motion.h2>
 
-          {/* CARD PRINCIPAL (PROJETO MESTRE) */}
+          {/* CARD PRINCIPAL: VENDAS VITÓRIA */}
           <motion.div
             className="main-project-card"
             initial="hidden"
@@ -115,7 +117,15 @@ function App() {
             transition={{ duration: 0.4 }}
           >
             <div className="main-project-visual">
-              <div className="glass-badge holographic">VENDAS VITÓRIA</div>
+              <div className="premium-logo-wrapper">
+                <div className="logo-glow"></div>
+                {/* Certifique-se de que a logo branca está na pasta /public/projetos/ */}
+                <img 
+                  src="/projetos/vendas-vitoria-logo.png" 
+                  alt="Logo Vendas Vitória" 
+                  className="premium-logo" 
+                />
+              </div>
             </div>
             <div className="main-project-info">
               <span className="tag-highlight">PROJETO MESTRE</span>
@@ -141,7 +151,7 @@ function App() {
             </div>
           </motion.div>
 
-          {/* GRID SECUNDÁRIO */}
+          {/* GRID SECUNDÁRIO: EFEITOS 3D IA */}
           <motion.div
             className="projects-grid"
             initial="hidden"
@@ -149,19 +159,16 @@ function App() {
             viewport={{ once: true, margin: '-50px' }}
             variants={staggerContainer}
           >
-            {/* Card 1 - DOCE ENCANTO COM DEMO */}
-            <motion.div
-              variants={fadeUp}
-              className="project-card"
-              whileHover="hover"
-            >
+            {/* CARD 1 - DOCE ENCANTO (IMAGEM DA IA) */}
+            <motion.div variants={fadeUp} className="project-card" whileHover="hover">
               <div className="card-visual doceria">
                 <motion.div
-                  className="icon-wrapper"
-                  variants={{ hover: { scale: 1.2, rotate: 5 } }}
+                  className="icon-3d-wrapper"
+                  variants={{ hover: { rotate: 2 } }}
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
-                  <Store size={48} strokeWidth={1.5} color="#fff" />
+                  {/* Imagem do Donut 3D */}
+                  <img src="/projetos/icone-doceria.png" alt="Ícone Doceria 3D" />
                 </motion.div>
               </div>
               <div className="card-info">
@@ -170,7 +177,6 @@ function App() {
                   Catálogo digital imersivo para confeitarias. UX focada no
                   fechamento rápido de pedidos.
                 </p>
-                
                 <a 
                   href="https://doceria-red.vercel.app/" 
                   target="_blank" 
@@ -182,19 +188,15 @@ function App() {
               </div>
             </motion.div>
 
-            {/* Card 2 */}
-            <motion.div
-              variants={fadeUp}
-              className="project-card"
-              whileHover="hover"
-            >
+            {/* CARD 2 - BURGER DELIVERY (EMOJI PLACEHOLDER) */}
+            <motion.div variants={fadeUp} className="project-card" whileHover="hover">
               <div className="card-visual burger">
                 <motion.div
-                  className="icon-wrapper"
-                  variants={{ hover: { scale: 1.2, rotate: -5 } }}
+                  className="icon-3d-wrapper"
+                  variants={{ hover: { rotate: -2 } }}
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
-                  <ShoppingBag size={48} strokeWidth={1.5} color="#fff" />
+                  <span className="emoji-3d-placeholder">🍔</span>
                 </motion.div>
               </div>
               <div className="card-info">
@@ -206,19 +208,15 @@ function App() {
               </div>
             </motion.div>
 
-            {/* Card 3 */}
-            <motion.div
-              variants={fadeUp}
-              className="project-card"
-              whileHover="hover"
-            >
+            {/* CARD 3 - BARBER BOOKING (EMOJI PLACEHOLDER) */}
+            <motion.div variants={fadeUp} className="project-card" whileHover="hover">
               <div className="card-visual barber">
                 <motion.div
-                  className="icon-wrapper"
-                  variants={{ hover: { scale: 1.2, rotate: 5 } }}
+                  className="icon-3d-wrapper"
+                  variants={{ hover: { rotate: 2 } }}
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
-                  <Scissors size={48} strokeWidth={1.5} color="#fff" />
+                  <span className="emoji-3d-placeholder">💈</span>
                 </motion.div>
               </div>
               <div className="card-info">
@@ -232,7 +230,7 @@ function App() {
           </motion.div>
         </section>
 
-        {/* Seção de Vantagens */}
+        {/* VANTAGENS */}
         <section id="vantagens" className="features-section">
           <motion.div
             className="features-grid"
@@ -245,24 +243,21 @@ function App() {
               <Zap size={32} className="feature-icon" />
               <h3>Hyper Performance</h3>
               <p>
-                Load instantâneo e arquitetura otimizada para retenção máxima de
-                usuários.
+                Load instantâneo e arquitetura otimizada para retenção máxima de usuários.
               </p>
             </motion.div>
             <motion.div variants={fadeUp} className="feature-card">
               <MonitorSmartphone size={32} className="feature-icon" />
               <h3>PWA Nativo</h3>
               <p>
-                Sem burocracia de App Stores. Seu cliente instala o sistema direto
-                pelo navegador.
+                Sem burocracia de App Stores. Seu cliente instala o sistema direto pelo navegador.
               </p>
             </motion.div>
             <motion.div variants={fadeUp} className="feature-card">
               <ShieldCheck size={32} className="feature-icon" />
               <h3>Cloud & Segurança</h3>
               <p>
-                Bancos de dados blindados e hospedagem serverless com
-                escalabilidade global.
+                Bancos de dados blindados e hospedagem serverless com escalabilidade global.
               </p>
             </motion.div>
           </motion.div>
@@ -270,8 +265,7 @@ function App() {
 
         <footer className="footer">
           <p>
-            &copy; {new Date().getFullYear()} DevFuture. Elevando negócios ao
-            ápice da tecnologia.
+            &copy; {new Date().getFullYear()} DevFuture. Elevando negócios ao ápice da tecnologia.
           </p>
         </footer>
       </div>
