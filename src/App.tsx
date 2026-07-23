@@ -17,7 +17,6 @@ function App() {
     whatsappMessage
   )}`;
 
-  // Tipagem 'any' para a Vercel não travar o Deploy
   const fadeUp: any = {
     hidden: { opacity: 0, y: 40 },
     visible: {
@@ -37,21 +36,19 @@ function App() {
 
   return (
     <React.Fragment>
-      <div className="app-container">
-        
-        {/* ================= BACKGROUND HIGH-TECH ================= */}
-        {/* Tempestade Cibernética */}
+      {/* ================= BACKGROUND CIBERNÉTICO & TEMPESTADE ================= */}
+      <div className="cyber-storm-container">
         <div className="storm-flash"></div>
         <div className="lightning-strike strike-1"></div>
         <div className="lightning-strike strike-2"></div>
         <div className="lightning-strike strike-3"></div>
-
-        {/* Fundo Dinâmico e Orbes de Luz */}
         <div className="noise-bg"></div>
         <div className="glow-orb main-orb"></div>
         <div className="glow-orb secondary-orb"></div>
-        {/* ======================================================== */}
+      </div>
 
+      {/* ================= CONTEÚDO PRINCIPAL (FLUTUA ACIMA DO FUNDO) ================= */}
+      <div className="app-container">
         <header className="navbar">
           <div className="logo">
             Dev<span className="accent-text">Future</span>
@@ -106,7 +103,7 @@ function App() {
             Sistemas em Destaque
           </motion.h2>
 
-          {/* CARD PRINCIPAL: VENDAS VITÓRIA */}
+          {/* CARD PRINCIPAL */}
           <motion.div
             className="main-project-card"
             initial="hidden"
@@ -119,7 +116,6 @@ function App() {
             <div className="main-project-visual">
               <div className="premium-logo-wrapper">
                 <div className="logo-glow"></div>
-                {/* Certifique-se de que a logo branca está na pasta /public/projetos/ */}
                 <img 
                   src="/projetos/vendas-vitoria-logo.png" 
                   alt="Logo Vendas Vitória" 
@@ -151,7 +147,7 @@ function App() {
             </div>
           </motion.div>
 
-          {/* GRID SECUNDÁRIO: EFEITOS 3D IA */}
+          {/* GRID SECUNDÁRIO */}
           <motion.div
             className="projects-grid"
             initial="hidden"
@@ -159,15 +155,14 @@ function App() {
             viewport={{ once: true, margin: '-50px' }}
             variants={staggerContainer}
           >
-            {/* CARD 1 - DOCE ENCANTO (IMAGEM DA IA) */}
+            {/* Card 1 - DOCE ENCANTO */}
             <motion.div variants={fadeUp} className="project-card" whileHover="hover">
               <div className="card-visual doceria">
                 <motion.div
                   className="icon-3d-wrapper"
-                  variants={{ hover: { rotate: 2 } }}
+                  variants={{ hover: { rotate: 3 } }}
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
-                  {/* Imagem do Donut 3D */}
                   <img src="/projetos/icone-doceria.png" alt="Ícone Doceria 3D" />
                 </motion.div>
               </div>
@@ -188,12 +183,12 @@ function App() {
               </div>
             </motion.div>
 
-            {/* CARD 2 - BURGER DELIVERY (EMOJI PLACEHOLDER) */}
+            {/* Card 2 - BURGER DELIVERY */}
             <motion.div variants={fadeUp} className="project-card" whileHover="hover">
               <div className="card-visual burger">
                 <motion.div
                   className="icon-3d-wrapper"
-                  variants={{ hover: { rotate: -2 } }}
+                  variants={{ hover: { rotate: -3 } }}
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
                   <span className="emoji-3d-placeholder">🍔</span>
@@ -208,12 +203,12 @@ function App() {
               </div>
             </motion.div>
 
-            {/* CARD 3 - BARBER BOOKING (EMOJI PLACEHOLDER) */}
+            {/* Card 3 - BARBER BOOKING */}
             <motion.div variants={fadeUp} className="project-card" whileHover="hover">
               <div className="card-visual barber">
                 <motion.div
                   className="icon-3d-wrapper"
-                  variants={{ hover: { rotate: 2 } }}
+                  variants={{ hover: { rotate: 3 } }}
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
                   <span className="emoji-3d-placeholder">💈</span>
@@ -230,7 +225,6 @@ function App() {
           </motion.div>
         </section>
 
-        {/* VANTAGENS */}
         <section id="vantagens" className="features-section">
           <motion.div
             className="features-grid"
@@ -242,31 +236,23 @@ function App() {
             <motion.div variants={fadeUp} className="feature-card">
               <Zap size={32} className="feature-icon" />
               <h3>Hyper Performance</h3>
-              <p>
-                Load instantâneo e arquitetura otimizada para retenção máxima de usuários.
-              </p>
+              <p>Load instantâneo e arquitetura otimizada para retenção máxima de usuários.</p>
             </motion.div>
             <motion.div variants={fadeUp} className="feature-card">
               <MonitorSmartphone size={32} className="feature-icon" />
               <h3>PWA Nativo</h3>
-              <p>
-                Sem burocracia de App Stores. Seu cliente instala o sistema direto pelo navegador.
-              </p>
+              <p>Sem burocracia de App Stores. Seu cliente instala o sistema direto pelo navegador.</p>
             </motion.div>
             <motion.div variants={fadeUp} className="feature-card">
               <ShieldCheck size={32} className="feature-icon" />
               <h3>Cloud & Segurança</h3>
-              <p>
-                Bancos de dados blindados e hospedagem serverless com escalabilidade global.
-              </p>
+              <p>Bancos de dados blindados e hospedagem serverless com escalabilidade global.</p>
             </motion.div>
           </motion.div>
         </section>
 
         <footer className="footer">
-          <p>
-            &copy; {new Date().getFullYear()} DevFuture. Elevando negócios ao ápice da tecnologia.
-          </p>
+          <p>&copy; {new Date().getFullYear()} DevFuture. Elevando negócios ao ápice da tecnologia.</p>
         </footer>
       </div>
     </React.Fragment>
