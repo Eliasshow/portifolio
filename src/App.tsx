@@ -36,18 +36,28 @@ function App() {
 
   return (
     <React.Fragment>
-      {/* ================= BACKGROUND CIBERNÉTICO & TEMPESTADE ================= */}
+      {/* ================= BACKGROUND: DILÚVIO & TEMPESTADE CIBERNÉTICA ================= */}
       <div className="cyber-storm-container">
+        {/* Clarão Atmosférico */}
         <div className="storm-flash"></div>
+        
+        {/* Raios Grossos e Frequentes */}
         <div className="lightning-strike strike-1"></div>
         <div className="lightning-strike strike-2"></div>
         <div className="lightning-strike strike-3"></div>
+        
+        {/* Chuva Parallax (3 Camadas para Profundidade Real) */}
+        <div className="rain-layer rain-back"></div>
+        <div className="rain-layer rain-mid"></div>
+        <div className="rain-layer rain-front"></div>
+
+        {/* Textura e Orbes */}
         <div className="noise-bg"></div>
         <div className="glow-orb main-orb"></div>
         <div className="glow-orb secondary-orb"></div>
       </div>
 
-      {/* ================= CONTEÚDO PRINCIPAL (FLUTUA ACIMA DO FUNDO) ================= */}
+      {/* ================= CONTEÚDO PRINCIPAL ================= */}
       <div className="app-container">
         <header className="navbar">
           <div className="logo">
