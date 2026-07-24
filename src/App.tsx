@@ -8,6 +8,7 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import './App.css';
+import LightningEngine from './LightningEngine';
 
 function App() {
   const whatsappNumber = '5551999279904';
@@ -19,37 +20,35 @@ function App() {
 
   const fadeUp: any = {
     hidden: { opacity: 0, y: 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] },
-    },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] } },
   };
 
   const staggerContainer: any = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
   };
 
   return (
     <React.Fragment>
-      {/* ================= BACKGROUND: DILÚVIO & TEMPESTADE CIBERNÉTICA ================= */}
+      {/* ================= BACKGROUND: ENGINE CINEMATOGRÁFICA ================= */}
       <div className="cyber-storm-container">
-        {/* Clarão Atmosférico */}
-        <div className="storm-flash"></div>
         
-        {/* Raios Grossos e Frequentes */}
-        <div className="lightning-strike strike-1"></div>
-        <div className="lightning-strike strike-2"></div>
-        <div className="lightning-strike strike-3"></div>
+        {/* Névoa Atmosférica */}
+        <div className="atmosphere-fog"></div>
         
-        {/* Chuva Parallax (3 Camadas para Profundidade Real) */}
-        <div className="rain-layer rain-back"></div>
-        <div className="rain-layer rain-mid"></div>
-        <div className="rain-layer rain-front"></div>
+        {/* ENGINE NATIVA DE RAIOS FRATAIS (Substituiu os raios de CSS) */}
+        <LightningEngine />
+        
+        {/* Sistema de Chuva com Desfoque de Movimento e Vento */}
+        <div className="wind-physics-wrapper">
+          <div className="rain-layer rain-back"></div>
+          <div className="rain-layer rain-mid"></div>
+          <div className="rain-layer rain-front"></div>
+          <div className="rain-layer rain-extreme"></div>
+        </div>
+
+        {/* EFEITO DE LENTE MOLHADA (Água na tela) */}
+        <div className="wet-lens"></div>
 
         {/* Textura e Orbes */}
         <div className="noise-bg"></div>
@@ -57,7 +56,7 @@ function App() {
         <div className="glow-orb secondary-orb"></div>
       </div>
 
-      {/* ================= CONTEÚDO PRINCIPAL ================= */}
+      {/* ================= CONTEÚDO PRINCIPAL (BLINDADO) ================= */}
       <div className="app-container">
         <header className="navbar">
           <div className="logo">
@@ -70,12 +69,7 @@ function App() {
         </header>
 
         <section className="hero">
-          <motion.div 
-            className="hero-content"
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-          >
+          <motion.div className="hero-content" initial="hidden" animate="visible" variants={staggerContainer}>
             <motion.div variants={fadeUp} className="badge-animated">
               <span className="dot-pulse"></span>
               Soluções Digitais sob Medida
@@ -103,34 +97,16 @@ function App() {
         </section>
 
         <section id="projetos" className="projects-section">
-          <motion.h2
-            className="section-title"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            variants={fadeUp}
-          >
+          <motion.h2 className="section-title" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-100px' }} variants={fadeUp}>
             Sistemas em Destaque
           </motion.h2>
 
           {/* CARD PRINCIPAL */}
-          <motion.div
-            className="main-project-card"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-50px' }}
-            variants={fadeUp}
-            whileHover={{ y: -5, scale: 1.01 }}
-            transition={{ duration: 0.4 }}
-          >
+          <motion.div className="main-project-card" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={fadeUp} whileHover={{ y: -5, scale: 1.01 }} transition={{ duration: 0.4 }}>
             <div className="main-project-visual">
               <div className="premium-logo-wrapper">
                 <div className="logo-glow"></div>
-                <img 
-                  src="/projetos/vendas-vitoria-logo.png" 
-                  alt="Logo Vendas Vitória" 
-                  className="premium-logo" 
-                />
+                <img src="/projetos/vendas-vitoria-logo.png" alt="Logo Vendas Vitória" className="premium-logo" />
               </div>
             </div>
             <div className="main-project-info">
@@ -142,107 +118,62 @@ function App() {
                 E-commerce de altíssima conversão.
               </p>
               <div className="tech-stack">
-                <span>React</span>
-                <span>Supabase</span>
-                <span>Tailwind</span>
+                <span>React</span><span>Supabase</span><span>Tailwind</span>
               </div>
-              <a
-                href="https://controle-de-vendas-demo-git-main-eliashow.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary mt-4 glow-effect"
-              >
+              <a href="https://controle-de-vendas-demo-git-main-eliashow.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn-primary mt-4 glow-effect">
                 Acessar Sistema ao Vivo <ArrowRight size={18} />
               </a>
             </div>
           </motion.div>
 
           {/* GRID SECUNDÁRIO */}
-          <motion.div
-            className="projects-grid"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-50px' }}
-            variants={staggerContainer}
-          >
-            {/* Card 1 - DOCE ENCANTO */}
+          <motion.div className="projects-grid" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={staggerContainer}>
+            {/* DOCERIA */}
             <motion.div variants={fadeUp} className="project-card" whileHover="hover">
               <div className="card-visual doceria">
-                <motion.div
-                  className="icon-3d-wrapper"
-                  variants={{ hover: { rotate: 3 } }}
-                  transition={{ type: 'spring', stiffness: 300 }}
-                >
+                <motion.div className="icon-3d-wrapper" variants={{ hover: { rotate: 3 } }} transition={{ type: 'spring', stiffness: 300 }}>
                   <img src="/projetos/icone-doceria.png" alt="Ícone Doceria 3D" />
                 </motion.div>
               </div>
               <div className="card-info">
                 <h3>Doce Encanto</h3>
-                <p>
-                  Catálogo digital imersivo para confeitarias. UX focada no
-                  fechamento rápido de pedidos.
-                </p>
-                <a 
-                  href="https://doceria-red.vercel.app/" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="btn-demo"
-                >
+                <p>Catálogo digital imersivo para confeitarias. UX focada no fechamento rápido de pedidos.</p>
+                <a href="https://doceria-red.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn-demo">
                   Ver Demo Interativa <ArrowRight size={16} />
                 </a>
               </div>
             </motion.div>
 
-            {/* Card 2 - BURGER DELIVERY */}
+            {/* BURGER */}
             <motion.div variants={fadeUp} className="project-card" whileHover="hover">
               <div className="card-visual burger">
-                <motion.div
-                  className="icon-3d-wrapper"
-                  variants={{ hover: { rotate: -3 } }}
-                  transition={{ type: 'spring', stiffness: 300 }}
-                >
+                <motion.div className="icon-3d-wrapper" variants={{ hover: { rotate: -3 } }} transition={{ type: 'spring', stiffness: 300 }}>
                   <span className="emoji-3d-placeholder">🍔</span>
                 </motion.div>
               </div>
               <div className="card-info">
                 <h3>Burger Delivery</h3>
-                <p>
-                  Automação de cardápio com roteamento de taxas e gestão de
-                  cozinha em tempo real.
-                </p>
+                <p>Automação de cardápio com roteamento de taxas e gestão de cozinha em tempo real.</p>
               </div>
             </motion.div>
 
-            {/* Card 3 - BARBER BOOKING */}
+            {/* BARBER */}
             <motion.div variants={fadeUp} className="project-card" whileHover="hover">
               <div className="card-visual barber">
-                <motion.div
-                  className="icon-3d-wrapper"
-                  variants={{ hover: { rotate: 3 } }}
-                  transition={{ type: 'spring', stiffness: 300 }}
-                >
+                <motion.div className="icon-3d-wrapper" variants={{ hover: { rotate: 3 } }} transition={{ type: 'spring', stiffness: 300 }}>
                   <span className="emoji-3d-placeholder">💈</span>
                 </motion.div>
               </div>
               <div className="card-info">
                 <h3>Barber Booking</h3>
-                <p>
-                  Agenda inteligente para estúdios premium com controle de
-                  fidelidade e CRM.
-                </p>
+                <p>Agenda inteligente para estúdios premium com controle de fidelidade e CRM.</p>
               </div>
             </motion.div>
           </motion.div>
         </section>
 
         <section id="vantagens" className="features-section">
-          <motion.div
-            className="features-grid"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-50px' }}
-            variants={staggerContainer}
-          >
+          <motion.div className="features-grid" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={staggerContainer}>
             <motion.div variants={fadeUp} className="feature-card">
               <Zap size={32} className="feature-icon" />
               <h3>Hyper Performance</h3>
